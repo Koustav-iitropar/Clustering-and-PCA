@@ -1,7 +1,7 @@
 clc;
 clear all;
-number_of_clusters=15;
-file=importdata('label.txt',',');
+number_of_clusters=10;
+file=importdata('data.txt',',');
 idx=kmeans(file,number_of_clusters);
 i=idx(1);
 
