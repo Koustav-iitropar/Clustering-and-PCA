@@ -16,7 +16,9 @@ for j=1:500:5000
     fprintf('loop %d \n',floor(j/500));
     C=unique(idx);
     for i=1:size(C,1)
-        fprintf('cluster %d number %d \n',C(i),sum(idx(j:j+499)==C(i)));
+        B(i,:)=[C(i), sum(idx(j:j+499)==C(i))];
+        fprintf('cluster %d number %d \n',C(i),B(i,2));
+        
     end
-    
+    fprintf('%d %d\n',(B==max(B)),max(B));
 end
