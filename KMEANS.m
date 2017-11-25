@@ -1,10 +1,5 @@
-clc;
-clear all;
-
-number_of_clusters=5;
-file=importdata('data.txt',',');
+function [] = KMEANS( file,number_of_clusters )
 idx=kmeans(file,number_of_clusters);
-i=idx(1);
 %%
 temp=zeros(10,number_of_clusters);
 for j=1:500:5000
@@ -28,3 +23,6 @@ acc= double(trace(conf)/size(file,1));
 fprintf('Confusion Matrix:');
 conf
 fprintf('Accuracy:%f\n',acc);
+
+end
+
